@@ -17,6 +17,7 @@ jobs:
         with:
           node-version: '14'
           cache: 'pnpm'
+          package-manager: 'pnpm@latest'
 
       - name: Install PNPM
         run: npm install -g pnpm@latest
