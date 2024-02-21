@@ -7,9 +7,6 @@ ENV PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1
 
 ARG TURBO_TEAM
 ENV TURBO_TEAM=$TURBO_TEAM
-ENV SENTRY_DSN=https://b037adc966a17823d6cf6304b71c3518@o4506669403471872.ingest.sentry.io/4506669566590976
-ENV SENTRY_ENVIRONMENT=local
-ENV CHAIN_ID=2484
 
 ARG TURBO_TOKEN
 ENV TURBO_TOKEN=$TURBO_TOKEN
@@ -22,18 +19,11 @@ WORKDIR /app
 
 COPY apis/extractor apis/extractor
 
-COPY config/router config/router
 COPY config/jest config/jest
 COPY config/typescript config/typescript
-COPY config/viem config/viem
 
 COPY packages/extractor packages/extractor
-COPY packages/router packages/router
 COPY packages/sushi packages/sushi
-COPY packages/tines packages/tines
-COPY packages/trident-sdk packages/trident-sdk
-COPY packages/v2-sdk packages/v2-sdk
-COPY packages/v3-sdk packages/v3-sdk
 
 COPY patches patches
 
